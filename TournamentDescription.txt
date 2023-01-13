@@ -1,0 +1,24 @@
+-Every match has 15 chances when a team could score <- either team 1 or team 2 (random number either 1 or 2)
+
+-To get a shot on goal the following stats are added together:
+    Midfielder: getFitness, getPassingAccuracy, getPositioning, getDribbling, getChanceCreation
+    Forward: getFitness, getPositioning, getDribbling, getChanceCreation, ShotAccuracy, ShotFrequency
+    Manager: getAbility,getRespect,getBelief,getKnowledge
+-Even if the team got a shot on goal there is a chance that the defense may intercept/ goal-keeper saves it
+-To get that probability I added:
+    Goal-Keeper: getFitness,getPassingAccuracy,getPositioning
+    Defender: getFitness,getPassingAccuracy,getDefensiveness,getDribbling
+    Manager: getAbility,getRespect,getBelief,getKnowledge
+
+-Group Stage allows draws
+-After the group Stage there must always be a winner:
+-If the score is a draw then go to penalty shoot-outs then sudden death
+-Set the order: Forwards,Midfielders,Defenders and then Goal-Keeper
+-Players penalty probability: getFitness,getShotAccuracy,getShotFrequency,getPositioning and every position get their bonus:
+    Forward: 25
+    Midfielders: 10
+    Defenders: 0
+    Goal-Keeper: 5
+-Goal-Keeper saves penalty probability: (getFitness,getOffSideAdherence,getPositioning)*10
+
+^Same stages as in world cup
